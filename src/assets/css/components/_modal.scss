@@ -1,0 +1,32 @@
+.modal-wrapper {
+    .modal-dialog {
+        .modal-content {
+            height: 90vh;
+
+            .review-modal-holder {
+                overflow: hidden;
+
+                .modal-body {
+                    display: grid;
+                    justify-content: center;
+                    overflow-y: scroll;
+                    height: 100%;
+
+                    .modal-card {
+
+                        .review-author-pic {
+                            width: 50px;
+                            border-radius: 50%;
+                        }
+
+                        .card-title {
+                            gap: 0.5rem;
+                            display: flex;
+                            align-items: center;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

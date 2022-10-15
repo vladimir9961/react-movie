@@ -1,0 +1,59 @@
+.navbar {
+    background-color: rgb(224 224 224) !important;
+    box-shadow: 3px 3px 10px #bebebe, -24px 0px 1px #ffffff;
+    z-index: 2;
+
+    .user-logo {
+        width: 32px;
+    }
+
+    .col {
+        overflow-x: visible !important;
+    }
+
+    .link-wrapper {
+        .navbar-nav {
+            align-items: center;
+            gap: 1rem;
+        }
+    }
+
+    .user-profile {
+        display: flex;
+        justify-content: flex-end;
+
+        .user-bg {
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: 30px 30px;
+            z-index: 9999999;
+            background-image: url(https://secure.gravatar.com/avatar/undefined);
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+
+            #dropdown-item-button {
+                background: none;
+                border: none;
+                width: 32px;
+                height: 32px;
+
+                &::after {
+                    content: none;
+                }
+            }
+        }
+    }
+
+    .navbar-collapse {
+        .navbar-nav {
+            a {
+                color: $textDark;
+
+                &:hover {
+                    color: $btn-primary;
+                }
+            }
+        }
+    }
+}

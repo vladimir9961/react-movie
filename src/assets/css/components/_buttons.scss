@@ -1,0 +1,11 @@
+.custom-btn {
+    position: relative;
+    background: none;
+    border: solid 1px;
+    margin-right: 2rem;
+
+    &:hover {
+        background: $btn-primary;
+        border: 1px solid white;
+    }
+}

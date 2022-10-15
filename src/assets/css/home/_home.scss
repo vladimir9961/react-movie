@@ -1,0 +1,15 @@
+#hero-img {
+    width: 100%;
+    height: 40vh;
+    background: linear-gradient(rgb(0 0 0 / 60%), rgb(0 0 0 / 60%)), url(../../images/hero.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.hero-holder {
+    height: 100%;
+    display: flex;
+    align-content: center;
+}

@@ -1,0 +1,40 @@
+.movie-wrapper {
+    padding-top: 1rem !important;
+
+    .list-group {
+        pointer-events: auto;
+        position: relative;
+        overflow-y: scroll;
+        height: 89vh;
+        padding-top: 1rem;
+
+        &::-webkit-scrollbar {
+            background-color: transparent;
+            width: 8px;
+        }
+
+        &::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        /* Handle */
+        &::-webkit-scrollbar-thumb {
+            border-radius: 10px;
+            background: $textDark;
+        }
+
+        .loading {
+            position: relative;
+            width: 100%;
+            height: 50px;
+
+            h1 {
+                position: absolute;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                text-align: center;
+            }
+        }
+    }
+}

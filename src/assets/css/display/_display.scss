@@ -1,0 +1,210 @@
+.full-width {
+    background-size: 100%;
+    position: absolute;
+    top: 0;
+
+    .background-col {
+        height: 100vh;
+        width: 100vw;
+        background: linear-gradient(5deg, rgb(2, 0, 36) 25%, rgb(221 221 232 / 0%) 70%);
+
+        #lists-display {
+
+            #display-list {
+                background: rgb(255 0 0);
+                width: 150px;
+            }
+        }
+
+        .holder-elements {
+            height: 100%;
+            display: flex;
+            align-items: flex-end;
+
+            .title {
+                h3 {
+
+                    font-weight: 800;
+                }
+            }
+
+            #lists {
+                &::before {
+                    color: white;
+                }
+
+                &:hover {
+                    &::before {
+                        color: $textDark;
+                    }
+                }
+            }
+
+            .watchlist-button {
+                color: white;
+
+                &:hover {
+
+                    &::before {
+                        color: $btn-primary;
+                    }
+                }
+            }
+
+            .favorite-button {
+                color: white;
+
+                &:hover {
+
+                    &::before {
+                        color: pink;
+                    }
+                }
+            }
+
+            #rate {
+                color: white;
+                position: relative;
+                width: 170px;
+
+                &:hover {
+
+                    &::before {
+                        color: gold;
+                    }
+                }
+
+                .rate-container {
+                    display: block;
+                    position: absolute;
+
+                    div {
+                        background: $seccondary-col;
+                        left: -31%;
+                        padding: 10px;
+                        border-radius: 6px;
+                        position: relative;
+                        display: flex;
+                        width: fit-content;
+                    }
+                }
+            }
+
+            .rate-date {
+                display: flex;
+                gap: 0.5rem;
+
+                .average-vote {
+                    &::before {
+                        color: gold;
+                        font-family: FontAwesome;
+                        content: "\f005";
+                    }
+                }
+            }
+
+            .overview {
+                p {
+                    font-size: 14px;
+                }
+            }
+
+            h5 {
+                margin-top: 10px;
+                font-weight: 600;
+            }
+
+            #holder {
+                overflow-x: auto;
+                width: 100%;
+                padding-bottom: 10px;
+
+
+                &::-webkit-scrollbar-track {
+                    border-radius: 10px;
+                    background: transparent;
+                }
+
+                &::-webkit-scrollbar {
+                    height: 8px;
+                    background: transparent;
+                }
+
+                &::-webkit-scrollbar-thumb {
+                    border-radius: 10px;
+                    background-color: #555;
+                }
+
+                .list-group {
+
+                    .credit-card {
+                        filter: grayscale(100%);
+
+                        &:hover {
+                            filter: grayscale(0);
+                        }
+
+                        .person_name {
+                            font-size: 12px;
+                            text-align: center;
+                            margin: 0;
+                        }
+                    }
+                }
+
+                .card {
+                    border: none;
+
+                    #card-link {
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        left: 0;
+                        bottom: 0;
+                        z-index: 2;
+                    }
+
+                    filter: grayscale(100%);
+
+                    &:hover {
+                        filter: grayscale(0);
+                    }
+
+                    .card-title {
+                        position: absolute;
+                        bottom: 1rem;
+                    }
+                }
+            }
+
+            .user-interaction-btns {
+                justify-content: flex-start;
+                gap: 2rem;
+
+                #lists {
+                    &::before {
+                        font-size: 2rem;
+                    }
+                }
+
+                .favorite-button {
+                    &::before {
+                        font-size: 2rem;
+                    }
+                }
+
+                .watchlist-button {
+                    &::before {
+                        font-size: 2rem;
+                    }
+                }
+
+                #rate {
+                    &::before {
+                        font-size: 2rem;
+                    }
+                }
+            }
+        }
+    }
+}

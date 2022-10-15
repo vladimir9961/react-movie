@@ -1,0 +1,15 @@
+@import url('//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css');
+@import "./_variables.scss";
+
+//NAVBAR
+@import "./navbar/_navbar";
+//PAGES
+@import "./home/_home.scss";
+@import "./movie-tv/movie-tv";
+@import "./display/display";
+//COMPONENTS
+@import "./components/_cards.scss";
+@import "./components/_buttons.scss";
+@import "./components/_side-bar.scss";
+@import "./components/_modal.scss";
+@import "./components/loader";

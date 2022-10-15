@@ -1,0 +1,345 @@
+#triler-wraper {
+
+    .card-img-overlay {
+        position: absolute;
+        color: rgb(255 255 255);
+        bottom: 1rem;
+        left: 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+
+        .card-title {
+            font-weight: 600;
+            font-size: 16px;
+        }
+
+        .card-text {
+
+            font-size: 12px;
+            font-weight: 600;
+        }
+    }
+
+
+
+    .list-group-item {
+        .card-img {
+            filter: brightness(70%);
+        }
+
+        &:hover {
+            .card-img {
+                filter: brightness(90%);
+            }
+
+        }
+    }
+
+    .open-modal {
+        position: absolute;
+        left: 0;
+        top: 0;
+        border: 0;
+        cursor: pointer;
+        right: 0;
+        height: 208px;
+        z-index: 9;
+        background: rgb(0 0 0 / 0%);
+
+        .custom-btn {
+            &:hover {
+                background: none !important;
+            }
+        }
+
+    }
+
+    #modal-btn {
+        &::before {
+            font-size: 4rem;
+            margin: 0;
+            cursor: pointer;
+            font-family: FontAwesome;
+            content: "\f04b  ";
+        }
+    }
+}
+
+iframe {
+    height: 600px;
+}
+
+.list-group {
+    gap: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: fit-content;
+
+    .placeholder-div {
+        border: none;
+
+        .card-img-top {
+            height: 330px;
+            -webkit-animation: animationName 2s infinite;
+            -moz-animation: animationName 2s infinite;
+            -o-animation: animationName 2s infinite;
+            animation: animationName 2s infinite;
+            width: 218px;
+        }
+
+        .card-body {
+            position: absolute;
+            width: 100%;
+            bottom: 0;
+
+            .placeholder-glow {
+                display: grid;
+                gap: 0.5rem;
+            }
+        }
+    }
+
+    @keyframes animationName {
+        0% {
+            opacity: 40%;
+        }
+
+        20% {
+            opacity: 90%;
+        }
+
+        33% {
+            opacity: 90%;
+        }
+
+        53% {
+            opacity: 40%;
+        }
+
+        100% {
+            opacity: 40%;
+        }
+    }
+
+    .list-group-item {
+        background: none;
+
+        .card {
+            cursor: pointer;
+            position: relative;
+            pointer-events: none;
+            z-index: 0;
+
+            #card-link {
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                z-index: 2;
+                pointer-events: auto;
+            }
+
+            .dropdown {
+                position: absolute;
+                right: 0;
+                top: 0;
+                z-index: 2;
+                background-size: 32px;
+                background-repeat: no-repeat;
+                border-radius: 50%;
+                width: 32px;
+                height: 32px;
+
+                #dropdown-item-button {
+                    background: none;
+                    border: none;
+                    width: 100%;
+                    height: 100%;
+
+                    &:after {
+                        content: none;
+                    }
+                }
+
+                .dropdown-toggle {
+                    background: none;
+                    border: none;
+                    padding: 0;
+                    width: 25px;
+                    height: 25px;
+                    position: relative;
+
+                    &::before {
+                        font-size: 12px;
+                        cursor: pointer;
+                        font-family: FontAwesome;
+                        content: "\f141";
+                        border-radius: 50%;
+                        width: 100%;
+                        height: 100%;
+                        position: absolute;
+                        top: 0.5rem;
+                        left: 0;
+                        display: flex;
+                        align-items: center;
+                        background-color: rgb(0 0 0 / 40%);
+                        justify-content: center;
+                    }
+
+                    &::after {
+                        content: none;
+                    }
+                }
+
+                .dropdown-menu {
+                    margin-top: 9px;
+                }
+
+                .dropdown-item {
+                    display: flex;
+                    gap: 0.5rem;
+                    align-items: center;
+
+                }
+
+                #lists {
+                    position: relative;
+
+
+                    .container-fluid {
+                        position: absolute;
+                        left: 100%;
+
+                        .row-lists {
+                            position: absolute;
+                            background: white;
+
+
+                            .list-items {
+                                padding: 5px;
+
+                                &:hover {
+                                    opacity: 0.8;
+                                    background-color: grey;
+                                }
+
+                            }
+                        }
+                    }
+                }
+
+
+
+                .rate-container {
+                    position: absolute;
+                    left: 100%;
+                    background: red;
+                }
+            }
+
+            transition: transform .2s;
+
+            &:hover {
+                transform: scale(1.03);
+                z-index: 2;
+
+                .card-img {
+                    filter: brightness(100%);
+                }
+            }
+
+            .card-img {
+                filter: brightness(70%);
+                border-radius: 8px;
+            }
+
+            .dropdown-item.active,
+            .dropdown-item:active {
+                background: none;
+                color: black;
+            }
+
+            .card-img-overlay {
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-end;
+
+                #card-rating {
+                    position: absolute;
+                    top: 0.5rem;
+                    border-radius: 50%;
+                    height: 30px;
+                    background-color: transparent !important;
+                    width: 30px;
+                    font-size: 12px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    left: 1rem;
+                    gap: 0.2rem;
+
+                    &::before {
+                        font-size: 1rem;
+                        margin: 0;
+                        cursor: pointer;
+                        font-family: FontAwesome;
+                        content: "\f005 ";
+                    }
+                }
+
+                .card-title {
+                    font-weight: 600;
+                    font-size: 16px;
+                }
+
+                .card-text {
+                    font-size: 12px;
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+}
+
+.watchlist-button {
+
+    &::before {
+        font-size: 1rem;
+        margin: 0;
+        cursor: pointer;
+        font-family: FontAwesome;
+        content: "\f02e";
+    }
+}
+
+.favorite-button {
+    &::before {
+        font-size: 1rem;
+        margin: 0;
+        cursor: pointer;
+        font-family: FontAwesome;
+        content: "\f004";
+    }
+}
+
+#lists {
+    &::before {
+        font-size: 1rem;
+        margin: 0;
+        cursor: pointer;
+        font-family: FontAwesome;
+        content: "\f03a";
+    }
+}
+
+#rate {
+    &::before {
+        font-size: 1rem;
+        margin: 0;
+        cursor: pointer;
+        font-family: FontAwesome;
+        content: "\f005 ";
+    }
+}
