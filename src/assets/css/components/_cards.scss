@@ -170,6 +170,7 @@ iframe {
                     width: 25px;
                     height: 25px;
                     position: relative;
+                    pointer-events: auto;
 
                     &::before {
                         font-size: 12px;

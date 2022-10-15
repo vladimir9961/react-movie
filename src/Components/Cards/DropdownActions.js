@@ -1,7 +1,7 @@
-import { Container, DropdownButton, Dropdown, Form, Row, Button } from 'react-bootstrap';
+import { Container, DropdownButton, Dropdown, Row, Button } from 'react-bootstrap';
 import Rate from './userActions/Rate';
 import { useState, useEffect } from 'react';
-import UserLists, { FetcList } from './userActions/Lists';
+import UserLists from './userActions/Lists';
 import WatchlistBtn from './userActions/WatchlistBtn';
 import FavoriteBtn from './userActions/FavoriteBtn'
 let session = localStorage.getItem('session-id');
@@ -32,7 +32,7 @@ export default function DropdownActions({ id, type, secType }) {
     }
     //CHECK IN RATED
     useEffect(() => {
-        const rat = fetch(`
+        fetch(`
         https://api.themoviedb.org/3/account/${accId}/rated/${secType}?api_key=3b5caee89d6f1ccfb03cb837adb8e9e1&language=en-US&session_id=${session}&sort_by=created_at.asc&page=1`)
             .then(res => res.json())
             .then((data) => {
@@ -45,7 +45,7 @@ export default function DropdownActions({ id, type, secType }) {
     //CHECK EVERY CARD IF IT IS IN FAVORITE WATCHLIST OR RATED
     const checkItemExist = (e) => {
         const checkInFavorite = async () => {
-            const fav = await fetch(`https://api.themoviedb.org/3/account/${accId}/favorite/${secType}?api_key=3b5caee89d6f1ccfb03cb837adb8e9e1&session_id=${session}&language=en-US&sort_by=created_at.asc&page=1`)
+            await fetch(`https://api.themoviedb.org/3/account/${accId}/favorite/${secType}?api_key=3b5caee89d6f1ccfb03cb837adb8e9e1&session_id=${session}&language=en-US&sort_by=created_at.asc&page=1`)
                 .then(res => res.json())
                 .then((data) => {
                     let obj = data.results.find(o => o.id === id);
@@ -58,7 +58,7 @@ export default function DropdownActions({ id, type, secType }) {
         }
         //CHECK IN WATCHLIST
         const checkInWatchlist = async () => {
-            const watch = await fetch(`
+            await fetch(`
            https://api.themoviedb.org/3/account/${accId}/watchlist/${secType}?api_key=3b5caee89d6f1ccfb03cb837adb8e9e1&language=en-US&session_id=${session}&sort_by=created_at.asc&page=1`)
                 .then(res => res.json())
                 .then((data) => {

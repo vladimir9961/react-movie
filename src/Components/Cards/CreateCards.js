@@ -26,7 +26,7 @@ const CreateCards = (url) => {
         }
         fetchData()
             .then(data => {
-                if (pageNum != url.page) {
+                if (pageNum !== url.page) {
                     setpageNum(url.page)
                     setData(prev => [...prev, ...data.results]);
                 } else {
