@@ -181,7 +181,43 @@
                 justify-content: flex-start;
                 gap: 2rem;
 
+
                 #lists {
+                    position: relative;
+
+                    #display-list {
+                        display: block;
+                        position: absolute;
+                        width: 200px;
+                        background: $tertiaryCol;
+                        overflow-y: hidden;
+                        color: $textMainCol;
+                        top: 0px;
+                        left: 100%;
+                        z-index: 9;
+
+                        button {
+                            background: $btn-primary;
+                            border: none;
+                        }
+
+                        .row-lists {
+
+                            .container {
+                                padding: 0;
+
+                                .list-items {
+                                    padding: 10px;
+                                    cursor: pointer;
+
+                                    &:hover {
+                                        background: $btn-primary;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
                     &::before {
                         font-size: 2rem;
                     }

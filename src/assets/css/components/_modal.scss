@@ -2,6 +2,7 @@
     .modal-dialog {
         .modal-content {
             height: 90vh;
+            background: $seccondary-col;
 
             .review-modal-holder {
                 overflow: hidden;
@@ -12,7 +13,28 @@
                     overflow-y: scroll;
                     height: 100%;
 
+                    &::-webkit-scrollbar-track {
+                        border-radius: 10px;
+                        background: transparent;
+                    }
+
+                    &::-webkit-scrollbar {
+                        width: 8px;
+                        background: transparent;
+                    }
+
+                    &::-webkit-scrollbar-thumb {
+                        border-radius: 10px;
+                        background-color: #555;
+                    }
+
                     .modal-card {
+                        background: transparent;
+                        border: 1px solid $textMainCol;
+
+                        .card-body {
+                            color: $textMainCol;
+                        }
 
                         .review-author-pic {
                             width: 50px;

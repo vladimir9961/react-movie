@@ -18,7 +18,7 @@ export default function DropdownActions({ id, type, secType }) {
     const [showRate, setShowRate] = useState(false)
     const styles = {
         favorite: {
-            color: existFavorite ? "red" : "black"
+            color: existFavorite ? "pink" : "black"
         },
         watchlist: {
             color: existWatchlist ? "red" : "black"
@@ -27,7 +27,7 @@ export default function DropdownActions({ id, type, secType }) {
             display: showlist ? "block" : "none"
         },
         rate: {
-            display: showRate ? "block" : "none"
+            display: showRate ? "flex" : "none"
         }
     }
     //CHECK IN RATED
@@ -113,7 +113,7 @@ export default function DropdownActions({ id, type, secType }) {
                     style={styles.list}
                 >
                     <Row>
-                        <Button>Create new list</Button>
+                        <Button className='custom-btn' id="new-list-btn">Create new list</Button>
                     </Row>
                     <Row
                         className="row-lists"
