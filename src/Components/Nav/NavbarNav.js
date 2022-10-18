@@ -18,12 +18,15 @@ function NavbarNav() {
         >
           <img className='user-logo' src={require("../../assets/images/logo-dark.png")} />
         </Col>
-        <Col
-          className='col-md-9 link-wrapper'
-        >
-          <Navbar.Collapse id="basic-navbar-nav">
+
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Col
+            className='col-md-9 link-wrapper'
+          >
             <Nav className="me-auto">
-              <Link to="/">Home</Link>
+              <li className='nav-item'>
+                <Link to="/">Home</Link>
+              </li>
               <NavDropdown as="li" title="Movies" id="dropdown-movies">
                 <NavDropdown.Item >
                   <Link to="movie/popular">Popular</Link>
@@ -55,11 +58,9 @@ function NavbarNav() {
               {!userInfo && <LoginModal />}
               {!userInfo && <LoginButton />}
             </Nav>
-          </Navbar.Collapse>
-        </Col>
-        <Navbar.Toggle
-          aria-controls="basic-navbar-nav"
-        />
+          </Col>
+        </Navbar.Collapse>
+
         <Col
           className='col-md-1 user-profile'
         >
@@ -74,8 +75,10 @@ function NavbarNav() {
             <Dropdown.Item as="button">Another action</Dropdown.Item>
             <Dropdown.Item as="button" onClick={logoutUser}>Logout</Dropdown.Item>
           </DropdownButton>}
+          <Navbar.Toggle
+            aria-controls="basic-navbar-nav"
+          />
         </Col>
-
       </Container>
     </Navbar>
   );

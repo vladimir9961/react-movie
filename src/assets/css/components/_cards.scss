@@ -141,6 +141,10 @@ iframe {
                 pointer-events: auto;
             }
 
+            .card-img {
+                border-radius: 8px;
+            }
+
             .dropdown {
                 position: absolute;
                 right: 0;
@@ -242,8 +246,6 @@ iframe {
                     }
                 }
 
-
-
                 .rate-container {
                     position: absolute;
                     left: 100%;
@@ -252,6 +254,7 @@ iframe {
                     left: 0;
                     height: 48px;
                     border-radius: 4px;
+                    align-items: center;
                 }
             }
 

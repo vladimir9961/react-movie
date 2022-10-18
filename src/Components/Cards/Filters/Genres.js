@@ -27,6 +27,7 @@ const Genres = (props) => {
                 {genre && genre.map(genre_item => {
                     return (
                         <MenuItem
+                            className="genre-item"
                             key={genre_item.id}
                             key-id={genre_item.id}
                             onClick={(e) => genres(e, genre_item.id)}>

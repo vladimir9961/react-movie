@@ -3,7 +3,7 @@
 @media (min-width: 1400px) {
 
     .container {
-        max-width: 2000px;
+        max-width: 1600px;
     }
 }
 
@@ -24,10 +24,6 @@ a {
     height: 100vh;
 }
 
-.modal-content {
-    // height: 50vh;
-}
-
 #img-search {
     height: 200px;
     width: auto;
@@ -40,6 +36,34 @@ a {
     background: linear-gradient(145deg, rgb(240, 240, 240), rgb(202, 202, 202));
     box-shadow: 5px 5px 10px #bcbcbc, -5px -5px 10px #fff;
 
+}
+
+.triler-holder {
+    overflow-x: scroll;
+    height: 400px;
+    transition: all 0.5s;
+    background-size: 100% 100% !important;
+    border-radius: 8px;
+    background-repeat: no-repeat !important;
+    overflow-y: hidden;
+}
+
+.scroll-wrapper {
+    &::-webkit-scrollbar-track {
+        border-radius: 10px;
+        background: transparent;
+    }
+
+    &::-webkit-scrollbar {
+        height: 8px;
+        cursor: pointer;
+        background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        background-color: rgb(168, 168, 168);
+    }
 }
 
 .searches-wrapper {
@@ -110,20 +134,4 @@ a {
     padding: 15px 0;
     height: 367px;
     overflow-y: hidden;
-}
-
-.holder::-webkit-scrollbar-track {
-    border-radius: 10px;
-    background: transparent;
-}
-
-.holder::-webkit-scrollbar {
-    height: 8px;
-    cursor: pointer;
-    background: transparent;
-}
-
-.holder::-webkit-scrollbar-thumb {
-    border-radius: 10px;
-    background-color: rgb(168, 168, 168);
 }

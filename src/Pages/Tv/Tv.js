@@ -11,23 +11,25 @@ export default function Tv() {
     const [filtered, setFiltered] = useState(null);
     return (
         <Container
-            className='movie-wrapper p-0'
-            fluid
+            className='movie-wrapper p-0 container'
         >
             <FilterContext.Provider value={{ filtered, setFiltered }}>
                 <Row
+                    className='m-0'
                     style={{ width: '100%' }}
                 >
-                    <Col className='col-3 col-xxl-2'>
+                    <Col className='col-xxl-2 p-0 col-md-3 col-12'>
                         <SideBar />
                     </Col>
-                    <Col className='col-9 col-xxl-10'>
-                        <Routes>
-                            <Route path="popular" element={<PopularTv />} />
-                            <Route path="airing_today" element={<AiringToday />} />
-                            <Route path="on_tv/*" element={<OnTv />} />
-                            <Route path="top_rated" element={<TopratedTv />} />
-                        </Routes>
+                    <Col className='col-xxl-10 p-0 col-md-9 col-12'>
+                        <main>
+                            <Routes>
+                                <Route path="popular" element={<PopularTv />} />
+                                <Route path="airing_today" element={<AiringToday />} />
+                                <Route path="on_tv/*" element={<OnTv />} />
+                                <Route path="top_rated" element={<TopratedTv />} />
+                            </Routes>
+                        </main>
                     </Col>
                 </Row>
             </FilterContext.Provider>

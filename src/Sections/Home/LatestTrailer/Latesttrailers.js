@@ -32,10 +32,9 @@ export default function Latesttrailers() {
                 </div>
             </div>
             <div className="d-flex w-100 flex-row flex-nowrap scroll" id='triler-wraper'>
-                <div className="w-100 holder draggable">
-                    {(show === false) && <TrailerCards url={movies} secType={"movie"}></TrailerCards>}
-                    {(show === true) && <TrailerCards url={tvs} secType={"tv"}></TrailerCards>}
-                </div>
+
+                {(show === false) && <TrailerCards url={movies} secType={"movie"}></TrailerCards>}
+                {(show === true) && <TrailerCards url={tvs} secType={"tv"}></TrailerCards>}
             </div>
         </section >
     )

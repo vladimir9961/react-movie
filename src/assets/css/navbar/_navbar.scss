@@ -1,10 +1,16 @@
 .navbar {
     background-color: rgb(224 224 224) !important;
     box-shadow: 3px 3px 10px #bebebe, -24px 0px 1px #ffffff;
-    z-index: 2;
+    z-index: 9;
+    min-height: 50px;
+
+    .container {
+        padding: 0;
+        position: relative;
+    }
 
     .user-logo {
-        width: 32px;
+        width: 75px;
     }
 
     .col {
@@ -21,6 +27,18 @@
     .user-profile {
         display: flex;
         justify-content: flex-end;
+        position: absolute;
+        right: 0;
+        top: 0;
+        gap: 0.5rem;
+
+        .navbar-toggler {
+            border: none;
+
+            &:focus {
+                box-shadow: none;
+            }
+        }
 
         .user-bg {
             background-repeat: no-repeat;
@@ -45,13 +63,30 @@
         }
     }
 
+
+    .show {
+        .dropdown-menu {
+            position: absolute;
+        }
+    }
+
     .navbar-collapse {
+
         .navbar-nav {
             a {
                 color: $textDark;
+            }
 
-                &:hover {
-                    color: $btn-primary;
+            .dropdown-menu {
+                padding: 0;
+
+                a {
+                    padding: 10px;
+                }
+
+                .dropdown-item:active {
+                    background-color: $btn-primary;
+                    color: $textDark
                 }
             }
         }

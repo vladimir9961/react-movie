@@ -13,6 +13,6 @@ export default function FilterBtn(props) {
     }
 
     return (
-        <Button id="filter-btn" onClick={filter}>FilterBtn</Button>
+        <Button id="filter-btn" onClick={filter}>Filter</Button>
     )
 }

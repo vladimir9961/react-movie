@@ -28,7 +28,7 @@ export default function PopularSection() {
                 </div>
             </div>
             <div className="d-flex w-100 flex-row flex-nowrap scroll">
-                <div className="w-100 holder draggable">
+                <div className="w-100 holder draggable scroll-wrapper">
                     <ListGroup className="list-group list-group-horizontal">
                         {(show === false) && <CreateCards url={trendingDay} type={movie}></CreateCards>}
                         {(show === true) && <CreateCards url={trandingWeek} type={movie} secType={"movies"}></CreateCards>}

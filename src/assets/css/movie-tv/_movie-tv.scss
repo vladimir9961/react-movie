@@ -1,12 +1,12 @@
 .movie-wrapper {
-    padding-top: 1rem !important;
+    // padding-top: 1rem !important;
 
     .list-group {
         pointer-events: auto;
         position: relative;
         overflow-y: scroll;
-        height: 89vh;
-        padding-top: 1rem;
+        height: calc(100vh - 50px - 1rem);
+        margin-top: 1rem;
 
         &::-webkit-scrollbar {
             background-color: transparent;
@@ -17,7 +17,6 @@
             background: transparent;
         }
 
-        /* Handle */
         &::-webkit-scrollbar-thumb {
             border-radius: 10px;
             background: $textDark;

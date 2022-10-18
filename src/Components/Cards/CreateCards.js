@@ -8,6 +8,7 @@ import { UserContext } from "../../Context/UserContext";
 import { Link, Route, Routes } from "react-router-dom";
 import Display from "../../Pages/Display/Display";
 import Loading from "../Loading/Loading";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 const CreateCards = (url) => {
 
     const navigate = useNavigate()
@@ -57,9 +58,13 @@ const CreateCards = (url) => {
                                 id="card-link"
                             />
 
-                            <Card.Img style={{ width: "220px", height: "330px" }}
+                            <LazyLoadImage
+                                className="card-img"
+                                style={{ width: "220px", height: "330px" }}
                                 src={movie.poster_path ? "https://www.themoviedb.org/t/p/w220_and_h330_face" + movie.poster_path : require('../../assets/images/placeholder-img.jpg')}
-                                alt="Card image" />
+                                alt="Card image"
+                                loading="lazy"
+                            />
 
 
                             {/* DROPDOWN WITH STARS FAVORITES WATCHILIST AND LIST */}

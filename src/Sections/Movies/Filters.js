@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Menu } from 'react-pro-sidebar';
+import { Menu, MenuItem } from 'react-pro-sidebar';
 import CalendarItem from '../../Components/Cards/Filters/Calendar';
 import FilterBtn from '../../Components/Cards/Filters/FilterBtn';
 import Genres from '../../Components/Cards/Filters/Genres'
@@ -89,11 +89,13 @@ export default function Filters() {
             <UserScore key='4' func={pull_user_score} />
             <MinimumUserVote key='5' func={pull_user_vote} />
             <Runtime key='6' func={pull_runtime} />
-            {displayBtnFilter ? <FilterBtn
-                func={pull_clicked}
-                props={filters}
-                genre={genres}
-            /> : ""}
+            <MenuItem className='button-filter'>
+                {displayBtnFilter ? <FilterBtn
+                    func={pull_clicked}
+                    props={filters}
+                    genre={genres}
+                /> : ""}
+            </MenuItem>
         </Menu>
     )
 }

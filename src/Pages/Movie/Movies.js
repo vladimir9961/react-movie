@@ -12,23 +12,25 @@ const Movies = () => {
 
     return (
         <Container
-            className='movie-wrapper p-0'
-            fluid
+            className='movie-wrapper p-0 container'
         >
             <FilterContext.Provider value={{ filtered, setFiltered }}>
                 <Row
+                    className='m-0'
                     style={{ width: '100%' }}
                 >
-                    <Col className='col-3 col-xxl-2'>
+                    <Col className=' col-xxl-2 p-0 col-md-3 col-12'>
                         <SideBar />
                     </Col>
-                    <Col className='col-9 col-xxl-10'>
-                        <Routes>
-                            <Route path="popular" element={<Popular />} />
-                            <Route path="now_playing" element={<Nowplaying />} />
-                            <Route path="upcoming/*" element={<Upcoming />} />
-                            <Route path="top_rated" element={<TopRated />} />
-                        </Routes>
+                    <Col className=' col-xxl-10 p-0 col-md-9 col-12'>
+                        <main>
+                            <Routes>
+                                <Route path="popular" element={<Popular />} />
+                                <Route path="now_playing" element={<Nowplaying />} />
+                                <Route path="upcoming/*" element={<Upcoming />} />
+                                <Route path="top_rated" element={<TopRated />} />
+                            </Routes>
+                        </main>
                     </Col>
                 </Row>
             </FilterContext.Provider>

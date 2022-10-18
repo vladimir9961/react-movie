@@ -12,6 +12,7 @@
     "react-bootstrap": "^2.5.0",
     "react-datepicker": "^4.8.0",
     "react-dom": "^18.2.0",
+    "react-lazy-load-image-component": "^1.5.5",
     "react-portal": "^4.2.2",
     "react-pro-sidebar": "^1.0.0-alpha.4",
     "react-range-slider-input": "^2.1.4",
