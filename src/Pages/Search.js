@@ -61,7 +61,7 @@ export default function Search() {
                                 </Card.Body>
                             </Card>
                         )
-                    }) : null}
+                    }) : "No results"}
                 </Col>
             </Row>
         </Container>

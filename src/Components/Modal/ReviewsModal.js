@@ -1,18 +1,20 @@
 import { Button, Modal, Card, Container, Image } from 'react-bootstrap';
 import { useState, useEffect } from 'react';
 
-export default function ReviewsModal(props) {
+export function ReviewsModal(props) {
     const [review, setReview] = useState('')
     useEffect(() => {
-        fetch(`https://api.themoviedb.org/3/${props.type}/${props.id}/reviews?api_key=3b5caee89d6f1ccfb03cb837adb8e9e1`)
-            .then((response) => response.json())
-            .then((data) => {
-                setReview(data.results);
-
-            })
-            .catch((error) => {
-                console.error('Error:', error);
-            });
+        async function getReviews() {
+            if (props.id !== undefined) {
+                let response = await fetch(`https://api.themoviedb.org/3/${props.type}/${props.id}/reviews?api_key=3b5caee89d6f1ccfb03cb837adb8e9e1`)
+                response = await response.json()
+                if (response.success === false) return
+                else {
+                    setReview(response.results);
+                }
+            }
+        }
+        getReviews()
     }, [props])
     return (
         <Modal
@@ -24,7 +26,6 @@ export default function ReviewsModal(props) {
         > <Container
             className='review-modal-holder'
         >
-
                 <Modal.Body>
                     {review ? review.map(result => {
                         return (

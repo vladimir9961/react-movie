@@ -13,7 +13,7 @@ export default function RecomendedCards(props) {
     }
     return (
         <>
-            <h5 className="text-white">Recomended</h5>
+            <h2 className="text-white">Recomended</h2>
             <div id='holder'>
                 <ListGroup className="list-group list-group-horizontal">
                     {data?.results?.map(item => {
@@ -22,7 +22,8 @@ export default function RecomendedCards(props) {
                                 <Link
                                     key={item.id}
                                     onClick={(e) => handleClick(item.id, props.type, item.title || item.name)}
-                                    id="card-link"
+                                    id={item.title || item.name}
+                                    aria-label={`${item.title || item.name}`}
                                 />
                                 <LazyLoadImage
                                     style={{ width: "300px" }}

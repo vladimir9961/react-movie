@@ -6,7 +6,7 @@ export function TrailerModal(props) {
 
     useEffect(() => {
         async function getVideos() {
-            if (Object.keys(props).length !== 0) {
+            if (Object.keys(props).length !== 0 && props.id !== undefined) {
                 let response = await fetch(`https://api.themoviedb.org/3/${props.type}/${props.id}/videos?api_key=3b5caee89d6f1ccfb03cb837adb8e9e1`)
                 response = await response.json()
                 if (response.success === false) return

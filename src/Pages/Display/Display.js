@@ -12,7 +12,7 @@ export default function Display() {
     let movieOrtv = idAndType[2]
     let id = idAndType[3]
 
-    const [background, setbackground] = useState("");
+    const [background, setbackground] = useState({});
     const [info, setinfo] = useState([])
     const [hours, sethours] = useState(0)
     //GET ALL INFO
@@ -20,8 +20,8 @@ export default function Display() {
         const response = await fetch(`https://api.themoviedb.org/3/${movieOrtv}/${id}?api_key=3b5caee89d6f1ccfb03cb837adb8e9e1&language=en-US&append_to_response=recommendations,videos,credits`)
             .then(res => res.json())
             .then((data) => {
-                setbackground(data.backdrop_path)
-                setinfo(data);
+                setbackground({ backgroundImage: `url(https://www.themoviedb.org/t/p/w1280${data.backdrop_path}` })
+                setinfo(data)
                 sethours(data.runtime);
             })
             .catch((error) => {
@@ -40,9 +40,7 @@ export default function Display() {
     return (
         <div
             className='full-width'
-            style={{
-                backgroundImage: `url("https://www.themoviedb.org/t/p/w1280${background}")`
-            }}
+            style={background && background}
         >
             <div className="background-col">
 
@@ -53,7 +51,7 @@ export default function Display() {
                         style={{ height: '410px', display: 'grid' }}
                     >
                         <div className='title'>
-                            <h3 className='text-white m-0'>{info.original_title || info.name}</h3>
+                            <h2 className='text-white m-0'>{info.original_title || info.name}</h2>
                         </div>
 
                         <div className='text-white rate-date'>
@@ -85,7 +83,7 @@ export default function Display() {
                             })}
                         </div>
                         <DisplayActions id={id} type={movieOrtv} />
-                        <div className='overview'><h5 className='text-white'>Overview</h5>
+                        <div className='overview'><h2 className='text-white'>Overview</h2>
                             <p className='text-white '>
                                 {info.overview}
                             </p>

@@ -12,7 +12,7 @@ export default function Credits(props) {
 
   return (
     <>
-      <h5 className="text-white">Cast</h5>
+      <h2 className="text-white">Cast</h2>
       <div id='holder'>
         <ListGroup className="list-group list-group-horizontal"
           style={{ alignItems: 'flex-start' }}
@@ -23,7 +23,7 @@ export default function Credits(props) {
                 <LazyLoadImage
                   style={{ height: '90px' }}
                   alt="Cast"
-                  src={"https://www.themoviedb.org/t/p/w92" + person.profile_path}
+                  src={person.profile_path ? "https://www.themoviedb.org/t/p/w92" + person.profile_path : require('../../assets/images/placeholder-img.jpg')}
                   roundedCircle
                 />
                 <p className="person_name text-white">{person.original_name}</p>
