@@ -16,7 +16,7 @@ function NavbarNav() {
         <Col
           className='col-md-1'
         >
-          <img className='user-logo' src={require("../../assets/images/logo-dark.png")} />
+          <img className='user-logo' src={require("../../assets/images/logo-dark.png")} alt="logo" />
         </Col>
 
         <Navbar.Collapse id="basic-navbar-nav">

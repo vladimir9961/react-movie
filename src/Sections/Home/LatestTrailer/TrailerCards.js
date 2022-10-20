@@ -44,7 +44,7 @@ export default function TrailerCards(props) {
 
                             >
                                 <LazyLoadImage
-                                    style={{ width: "370px", borderRadius: "8px" }}
+                                    style={{ width: "370px", borderRadius: "8px", height: 'auto' }}
                                     src={"https://www.themoviedb.org/t/p/w780" + movie.backdrop_path}
 
                                     alt="Card image"

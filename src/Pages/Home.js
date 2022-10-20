@@ -5,17 +5,19 @@ import PopularSection from '../Sections/Home/PopularSection';
 import Trending from '../Sections/Home/Trending';
 const Home = () => {
 
-
   return (
     <Container
       fluid
       className="p-0 hero-wrapper"
     >
       <Hero />
-      <Container>
+      <Container
+      >
         <PopularSection />
         <Latesttrailers />
-        <Trending />
+        <Trending
+
+        />
       </Container>
     </Container >
   );
