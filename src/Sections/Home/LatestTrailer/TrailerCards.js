@@ -13,35 +13,32 @@ export default function TrailerCards(props) {
             let response = await fetch(props.url)
             response = await response.json()
             setCard(response.results)
-            setBackground("https://www.themoviedb.org/t/p/w780" + response.results[0].backdrop_path)
+            setBackground(response.results && "https://www.themoviedb.org/t/p/w780" + response.results[0].backdrop_path)
             setIsPending(false)
         }
         getItems()
     }, [])
 
     const hoveredCard = (e) => {
-        setBackground(e);
+        if (background !== e) {
+            setBackground(e);
+        }
     }
+
     return (
         <div className="w-100 triler-holder scroll-wrapper draggable"
-            style={{ background: `url(${background && background})` }}
+            style={{ background: `url(${background})` }}
         >
-            <div></div>
             <ListGroup className="list-group list-group-horizontal"
-
             >
                 <TrailerModal />
                 {isPending && <PlaceHolder />}
-                {console.log(background)}
-
                 {
-
                     card?.map((movie) => {
                         return (
                             <ListGroup.Item key={movie.id}
                                 style={{ border: 'none', padding: '0' }}
-                                onMouseEnter={() => hoveredCard("https://www.themoviedb.org/t/p/w780" + movie.backdrop_path)}
-
+                                onMouseEnter={() => hoveredCard("https://www.themoviedb.org/t/p/w780" + movie?.backdrop_path)}
                             >
                                 <LazyLoadImage
                                     style={{ width: "370px", borderRadius: "8px", height: 'auto' }}
@@ -52,6 +49,7 @@ export default function TrailerCards(props) {
                                 <ModalFrame
                                     id={movie.id}
                                     type={props.secType}
+                                    name={movie.title && movie.title || movie.name}
                                 />
                                 <Card.ImgOverlay>
                                     <Card.Title>{movie.title && movie.title || movie.name}</Card.Title>

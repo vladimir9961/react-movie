@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { Image, ListGroup } from "react-bootstrap";
-
+import { ListGroup } from "react-bootstrap";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 export default function Credits(props) {
   const { data } = props
   const [cast, setCast] = useState([])
@@ -20,8 +20,9 @@ export default function Credits(props) {
           {cast && cast?.map(person => {
             return (
               <div className="credit-card">
-                <Image
+                <LazyLoadImage
                   style={{ height: '90px' }}
+                  alt="Cast"
                   src={"https://www.themoviedb.org/t/p/w92" + person.profile_path}
                   roundedCircle
                 />

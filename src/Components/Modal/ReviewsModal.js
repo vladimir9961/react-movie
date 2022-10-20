@@ -9,6 +9,9 @@ export default function ReviewsModal(props) {
             .then((data) => {
                 setReview(data.results);
 
+            })
+            .catch((error) => {
+                console.error('Error:', error);
             });
     }, [props])
     return (
@@ -31,6 +34,7 @@ export default function ReviewsModal(props) {
                                     <Card.Title>
                                         <Image
                                             className='review-author-pic'
+                                            alt="review-avatar"
                                             src={result.author_details.avatar_path && result.author_details.avatar_path.substring(1)}
                                         />
                                         {result.author}</Card.Title>

@@ -14,7 +14,7 @@ export default function PopularSection() {
                 <div className="selector d-flex">
                     <Form.Check
                         type="switch"
-                        id="custom-switch"
+                        id="trending-switch"
                         onClick={(e) => {
                             setShow(!show)
                             if (e.target.checked === true) {

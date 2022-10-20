@@ -51,24 +51,27 @@ const CreateCards = (url) => {
                 return (
                     <ListGroup.Item style={{ border: 'none' }} className="text-white p-0 " key={movie.id}>
                         <Card style={{ border: 'none' }}>
-
                             <Link
-
                                 onClick={(e) => handleClick(movie.id, url.type, movie.title || movie.name)}
-                                id="card-link"
+                                aria-labelledby={movie.title || movie.name}
+                                className="card-link"
+                                aria-label={`${movie.title || movie.name}`}
                             />
-
                             <LazyLoadImage
                                 className="card-img"
                                 style={{ width: "220px", height: "330px" }}
                                 src={movie.poster_path ? "https://www.themoviedb.org/t/p/w220_and_h330_face" + movie.poster_path : require('../../assets/images/placeholder-img.jpg')}
-                                alt="Card image"
+                                alt={movie.title || movie.name}
                                 loading="lazy"
                             />
-
-
                             {/* DROPDOWN WITH STARS FAVORITES WATCHILIST AND LIST */}
-                            {userInfo && <DropdownActions id={movie.id} type={url.type} secType={url.secType} />}
+                            {userInfo && <DropdownActions
+                                id={movie.id}
+                                type={url.type}
+                                secType={url.secType}
+                                role="button"
+                                name={movie.title || movie.name}
+                            />}
                             <Card.ImgOverlay>
                                 <Badge
                                     id="card-rating"

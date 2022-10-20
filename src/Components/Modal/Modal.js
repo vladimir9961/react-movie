@@ -5,11 +5,17 @@ export function TrailerModal(props) {
     const [video, setVideo] = useState('')
 
     useEffect(() => {
-        fetch(`https://api.themoviedb.org/3/${props.type}/${props.id}/videos?api_key=3b5caee89d6f1ccfb03cb837adb8e9e1`)
-            .then((response) => response.json())
-            .then((data) => {
-                setVideo(data.results[0].key);
-            });
+        async function getVideos() {
+            if (Object.keys(props).length !== 0) {
+                let response = await fetch(`https://api.themoviedb.org/3/${props.type}/${props.id}/videos?api_key=3b5caee89d6f1ccfb03cb837adb8e9e1`)
+                response = await response.json()
+                if (response.success === false) return
+                else {
+                    setVideo(response.results[0].key)
+                }
+            }
+        }
+        getVideos()
     }, [props])
     return (
         <Modal
@@ -25,16 +31,14 @@ export function TrailerModal(props) {
 
 export function ModalFrame(props) {
     const [modalShow, setModalShow] = useState(false);
-
     return (
         <>
             <Button
                 variant="primary"
                 onClick={() => setModalShow(true)}
                 className="open-modal custom-btn"
-                id='modal-btn'
+                aria-labelledby={props.name && props.name}
             >
-                {props.name && props.name}
             </Button>
 
             <TrailerModal

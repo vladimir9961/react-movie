@@ -24,6 +24,10 @@ export default function Display() {
                 setinfo(data);
                 sethours(data.runtime);
             })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+        return response
     }
 
     useEffect(() => {

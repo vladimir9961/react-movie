@@ -1,4 +1,4 @@
-import { Container, DropdownButton, Dropdown, Row, Button } from 'react-bootstrap';
+import { Container, DropdownButton, Dropdown, Row, Button, ButtonGroup } from 'react-bootstrap';
 import Rate from './userActions/Rate';
 import { useState, useEffect } from 'react';
 import UserLists from './userActions/Lists';
@@ -6,7 +6,7 @@ import WatchlistBtn from './userActions/WatchlistBtn';
 import FavoriteBtn from './userActions/FavoriteBtn'
 let session = localStorage.getItem('session-id');
 let accId = localStorage.getItem('user-id');
-export default function DropdownActions({ id, type, secType }) {
+export default function DropdownActions({ id, type, secType, name }) {
     //SET MOVIES IF SECTYPE PROP IS EMPTY FOR FETCH
     if (secType === undefined) {
         secType = "movies"
@@ -94,18 +94,21 @@ export default function DropdownActions({ id, type, secType }) {
     return (
         <DropdownButton
             align="end"
+            as={ButtonGroup}
             title=""
             key-id={id}
+            aria-label={name}
             onClick={(e) => callChekckItemExist(e)}
             key-type={type}
             autoClose={false}
-            id="dropdown-autoclose-outside"
+            aria-labelledby={name}
         >
             {type !== "tv" && <Dropdown.Item
                 eventKey="1"
                 key-id={id}
                 key-type={type}
                 id="lists"
+                aria-labelledby="add to list"
                 onClick={(e) => displayContainerWithLists(e)}
             >Add to list
                 <Container
@@ -113,7 +116,7 @@ export default function DropdownActions({ id, type, secType }) {
                     style={styles.list}
                 >
                     <Row>
-                        <Button className='custom-btn' id="new-list-btn">Create new list</Button>
+                        <Button className='custom-btn' id="new-list-btn" aria-labelledby="create new list">Create new list</Button>
                     </Row>
                     <Row
                         className="row-lists"
@@ -134,6 +137,7 @@ export default function DropdownActions({ id, type, secType }) {
                 id="favorite"
             >
                 <FavoriteBtn
+                    aria-labelledby="add to favorite"
                     style={styles.favorite}
                     id={id}
                     type={type}
@@ -147,6 +151,7 @@ export default function DropdownActions({ id, type, secType }) {
                 id="watchlist"
             >
                 <WatchlistBtn
+                    aria-labelledby="add to watchlist"
                     style={styles.watchlist}
                     id={id}
                     type={type}
@@ -169,7 +174,7 @@ export default function DropdownActions({ id, type, secType }) {
                         id={id}
                         value={rating}
                         type={type}
-
+                        aria-labelledby="add rate"
                     />
                 </Container>
             </Dropdown.Item>

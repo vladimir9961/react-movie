@@ -2,6 +2,7 @@ import React from 'react'
 import { Card, ListGroup } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { useNavigate } from "react-router-dom";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 export default function RecomendedCards(props) {
     const navigate = useNavigate()
     const { data } = props
@@ -23,9 +24,13 @@ export default function RecomendedCards(props) {
                                     onClick={(e) => handleClick(item.id, props.type, item.title || item.name)}
                                     id="card-link"
                                 />
-                                <Card.Img
+                                <LazyLoadImage
                                     style={{ width: "300px" }}
-                                    src={"https://www.themoviedb.org/t/p/w780" + item?.backdrop_path}
+                                    id="recomended-cards"
+                                    alt="recomended-cards"
+                                    src={
+                                        item.backdrop_path ? "https://www.themoviedb.org/t/p/w780" + item?.backdrop_path
+                                            : require('../../assets/images/placeholder-img.jpg')}
                                 />
                                 <Card.ImgOverlay>
                                     <Card.Title

@@ -9,6 +9,7 @@ import Search from './Pages/Search';
 import { UserContext } from './Context/UserContext';
 import Display from './Pages/Display/Display';
 import Tv from './Pages/Tv/Tv';
+import Watchlist from './Pages/Watchlist/Watchlist';
 function App() {
   //IF USER LOGGED
   const [userInfo, setUserInfo] = useState(null);
@@ -43,6 +44,7 @@ function App() {
           <Route path="/search" element={<Search />} />
           <Route path="/movie/*" element={<Movies />} />
           <Route path="/tv/*" element={<Tv />} />
+          <Route path="/watchlist" element={<Watchlist />} />
         </Routes>
       </UserContext.Provider>
     </Router>

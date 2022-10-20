@@ -3,7 +3,7 @@ import { useState } from 'react';
 import TrailerCards from './TrailerCards';
 export default function Latesttrailers() {
     const [show, setShow] = useState(false)
-    const [movieOrTv, setMovieOrTv] = useState(false)
+    const [setMovieOrTv] = useState(false)
 
     const curentDate = new Date().toLocaleDateString('sv');
     const sevenDaysAgo = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000).toLocaleDateString('sv')
