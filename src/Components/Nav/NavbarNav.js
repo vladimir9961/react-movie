@@ -61,7 +61,6 @@ function NavbarNav() {
                 </NavDropdown>
               </ul>
               {!userInfo && <LoginModal />}
-              {!userInfo && <LoginButton />}
             </Nav>
           </Col>
         </Navbar.Collapse>
@@ -69,6 +68,7 @@ function NavbarNav() {
         <Col
           className='col-md-1 user-profile'
         >
+          {!userInfo && <LoginButton />}
           {userInfo && <DropdownButton
             title=''
             align="end"

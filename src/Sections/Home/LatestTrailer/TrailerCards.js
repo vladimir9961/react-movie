@@ -26,41 +26,44 @@ export default function TrailerCards(props) {
     }
 
     return (
-        <div className="w-100 triler-holder scroll-wrapper draggable"
+        <div className="w-100 triler-holder draggable"
             style={{ background: `url(${background})` }}
         >
-            <ListGroup className="list-group list-group-horizontal"
-            >
-                <TrailerModal />
-                {isPending && <PlaceHolder />}
-                {
-                    card?.map((movie) => {
-                        return (
-                            <ListGroup.Item key={movie.id}
-                                style={{ border: 'none', padding: '0' }}
-                                onMouseEnter={() => hoveredCard("https://www.themoviedb.org/t/p/w780" + movie?.backdrop_path)}
-                            >
-                                <LazyLoadImage
-                                    style={{ width: "370px", borderRadius: "8px", height: 'auto' }}
-                                    src={"https://www.themoviedb.org/t/p/w780" + movie.backdrop_path}
+            <div className='mask scroll-wrapper'>
 
-                                    alt="Card image"
-                                />
-                                <ModalFrame
-                                    id={movie.id}
-                                    type={props.secType}
-                                    name={movie.title && movie.title || movie.name}
-                                />
-                                <Card.ImgOverlay>
-                                    <Card.Title>{movie.title && movie.title || movie.name}</Card.Title>
-                                    <Card.Text>{movie.release_date && movie.release_date.slice(0, 4) || movie.first_air_date && movie.first_air_date.slice(0, 4)}
-                                    </Card.Text>
-                                </Card.ImgOverlay>
-                            </ListGroup.Item>
-                        )
-                    })
-                }
-            </ListGroup >
+                <ListGroup className="list-group list-group-horizontal"
+                >
+                    <TrailerModal />
+                    {isPending && <PlaceHolder />}
+                    {
+                        card?.map((movie) => {
+                            return (
+                                <ListGroup.Item key={movie.id}
+                                    style={{ border: 'none', padding: '0' }}
+                                    onMouseEnter={() => hoveredCard("https://www.themoviedb.org/t/p/w780" + movie?.backdrop_path)}
+                                >
+                                    <LazyLoadImage
+                                        style={{ width: "370px", borderRadius: "8px", height: 'auto' }}
+                                        src={"https://www.themoviedb.org/t/p/w780" + movie.backdrop_path}
+
+                                        alt="Card image"
+                                    />
+                                    <ModalFrame
+                                        id={movie.id}
+                                        type={props.secType}
+                                        name={movie.title && movie.title || movie.name}
+                                    />
+                                    <Card.ImgOverlay>
+                                        <Card.Title>{movie.title && movie.title || movie.name}</Card.Title>
+                                        <Card.Text>{movie.release_date && movie.release_date.slice(0, 4) || movie.first_air_date && movie.first_air_date.slice(0, 4)}
+                                        </Card.Text>
+                                    </Card.ImgOverlay>
+                                </ListGroup.Item>
+                            )
+                        })
+                    }
+                </ListGroup >
+            </div>
         </div>
     )
 }

@@ -101,7 +101,7 @@ export function LoginButton() {
 
     return (
         <>
-            <Button as='button' variant="primary" onClick={() => setModalShow(true)}>
+            <Button as='button' variant="primary" className="login" onClick={() => setModalShow(true)}>
                 Login
             </Button>
 
