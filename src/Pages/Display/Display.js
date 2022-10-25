@@ -93,6 +93,7 @@ export default function Display() {
                                 id={info.id}
                                 name="Watch trailer"
                                 type={movieOrtv == 'movie' ? 'movie' : 'tv'}
+                                title="Watch Trailer"
                             />
                             <ModalReviews
                                 name="Reviews"

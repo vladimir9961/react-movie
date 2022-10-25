@@ -10,6 +10,7 @@ export default function RecomendedCards(props) {
         const spaceReplace = name.replaceAll(' ', '-')
         navigate(`/display/${type}/${id}-${spaceReplace}`);
         navigate(0)
+        console.log('click')
     }
     return (
         <>
@@ -24,6 +25,7 @@ export default function RecomendedCards(props) {
                                     onClick={(e) => handleClick(item.id, props.type, item.title || item.name)}
                                     id={item.title || item.name}
                                     aria-label={`${item.title || item.name}`}
+                                    className="recomended-link"
                                 />
                                 <LazyLoadImage
                                     style={{ width: "300px" }}

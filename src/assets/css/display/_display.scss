@@ -140,6 +140,10 @@
                     .credit-card {
                         filter: grayscale(100%);
 
+                        img {
+                            border-radius: 50%;
+                        }
+
                         &:hover {
                             filter: grayscale(0);
                         }
@@ -162,6 +166,15 @@
                         left: 0;
                         bottom: 0;
                         z-index: 2;
+                    }
+
+                    .recomended-link {
+                        z-index: 9;
+                        position: absolute;
+                        left: 0;
+                        right: 0;
+                        top: 0;
+                        bottom: 0;
                     }
 
                     #recomended-cards {

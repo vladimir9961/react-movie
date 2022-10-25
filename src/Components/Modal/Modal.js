@@ -31,6 +31,7 @@ export function TrailerModal(props) {
 
 export function ModalFrame(props) {
     const [modalShow, setModalShow] = useState(false);
+    console.log(props.title);
     return (
         <>
             <Button
@@ -39,6 +40,7 @@ export function ModalFrame(props) {
                 className="open-modal custom-btn"
                 aria-labelledby={props.name && props.name}
             >
+                {props.title}
             </Button>
 
             <TrailerModal
