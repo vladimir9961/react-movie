@@ -37,6 +37,7 @@ export function ModalFrame(props) {
                 variant="primary"
                 onClick={() => setModalShow(true)}
                 className="open-modal custom-btn"
+                id="modal-btn"
                 aria-labelledby={props.name && props.name}
             >
                 {props.title}

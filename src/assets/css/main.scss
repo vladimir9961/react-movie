@@ -16,6 +16,24 @@
     // font-family: "Roboto", sans-serif;
 }
 
+body {
+    &::-webkit-scrollbar-track {
+        border-radius: 10px;
+        background: transparent;
+    }
+
+    &::-webkit-scrollbar {
+        width: 6px;
+        cursor: pointer;
+        background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        background-color: rgb(168, 168, 168);
+    }
+}
+
 a {
     text-decoration: none;
 }
@@ -140,4 +158,16 @@ a {
     padding: 15px 0;
     height: 367px;
     overflow-y: hidden;
+}
+
+.user-submit {
+    .form-check-input:checked {
+        background-color: $btn-primary;
+        border: none;
+    }
+}
+
+.login-btn {
+    background: $btn-primary;
+    border: none;
 }

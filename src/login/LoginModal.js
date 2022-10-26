@@ -51,7 +51,7 @@ export function LoginModal(props) {
         >
             <Modal.Header closeButton>
                 <Modal.Title id="contained-modal-title-vcenter">
-                    Modal heading
+                    Login
                 </Modal.Title>
             </Modal.Header>
             <Modal.Body>
@@ -65,9 +65,6 @@ export function LoginModal(props) {
                             value={username}
                             onChange={getUsername}
                         />
-                        <Form.Text className="text-muted">
-                            We'll never share your email with anyone else.
-                        </Form.Text>
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="formBasicPassword">
                         <Form.Label>Password</Form.Label>
@@ -78,7 +75,7 @@ export function LoginModal(props) {
                             onChange={getPassword}
                         />
                     </Form.Group>
-                    <Form.Group className="mb-3" controlId="formBasicCheckbox">
+                    <Form.Group className="mb-3 user-submit" controlId="formBasicCheckbox">
                         <Form.Check
                             type="checkbox"
                             label="Check me out"
@@ -87,7 +84,7 @@ export function LoginModal(props) {
                             checked={check}
                         />
                     </Form.Group>
-                    <Button type='submit' variant="primary">
+                    <Button type='submit' variant="primary" className="login-btn">
                         Submit
                     </Button>
                 </Form>

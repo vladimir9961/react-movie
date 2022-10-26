@@ -38,7 +38,9 @@ export default function TrailerCards(props) {
                     {
                         card?.map((movie) => {
                             return (
-                                <ListGroup.Item key={movie.id}
+                                <ListGroup.Item
+                                    key={movie.id}
+                                    className='treiler-card'
                                     style={{ border: 'none', padding: '0' }}
                                     onMouseEnter={() => hoveredCard("https://www.themoviedb.org/t/p/w780" + movie?.backdrop_path)}
                                 >
