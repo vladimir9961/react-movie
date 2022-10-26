@@ -7,7 +7,7 @@ import { useContext } from "react";
 import { UserContext } from "../../Context/UserContext";
 import { Link, Route, Routes } from "react-router-dom";
 import Display from "../../Pages/Display/Display";
-import Loading from "../Loading/Loading";
+import Loading from "../LoadingCards/LoadingCards";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 const CreateCards = (url) => {
 

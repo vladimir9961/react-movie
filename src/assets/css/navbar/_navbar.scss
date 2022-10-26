@@ -48,10 +48,10 @@
     .user-profile {
         display: flex;
         justify-content: flex-end;
-        position: absolute;
         right: 0;
         top: 0;
         gap: 0.5rem;
+        position: absolute;
 
         .login {
             background: $btn-primary;

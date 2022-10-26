@@ -31,7 +31,6 @@ export function TrailerModal(props) {
 
 export function ModalFrame(props) {
     const [modalShow, setModalShow] = useState(false);
-    console.log(props.title);
     return (
         <>
             <Button

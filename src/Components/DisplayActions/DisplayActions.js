@@ -1,12 +1,13 @@
 import FavoriteBtn from '../../Components/Cards/userActions/FavoriteBtn';
 import UserLists from '../../Components/Cards/userActions/Lists';
 import WatchlistBtn from '../../Components/Cards/userActions/WatchlistBtn';
-import { Button, Col, Container, Row } from 'react-bootstrap';
+import { Button, Container, Row } from 'react-bootstrap';
 import { useState, useEffect } from 'react';
 import Rate from '../Cards/userActions/Rate';
 let session = localStorage.getItem('session-id');
 let accId = localStorage.getItem('user-id');
 export default function DisplayActions(props) {
+    console.log(props)
     const [existFavorite, setExistFavorite] = useState(false);
     const [existWatchlist, setExistWatchlist] = useState(false);
     const [showlist, setShowList] = useState(false)

@@ -65,9 +65,6 @@ export default function FavoriteBtn(props) {
         checkIfInFavorite()
     }
 
-
-
-
     return (
         <div
             className='favorite-button'

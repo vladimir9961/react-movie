@@ -141,7 +141,7 @@ export default function DropdownActions({ id, type, secType, name }) {
                     style={styles.favorite}
                     id={id}
                     type={type}
-                    exist={existFavorite}
+                // exist={existFavorite}
                 />Add to favorite
             </Dropdown.Item>
             <Dropdown.Item
