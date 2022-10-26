@@ -2,7 +2,6 @@
     background-color: rgb(224 224 224) !important;
     box-shadow: 3px 3px 10px #bebebe, -24px 0px 1px #ffffff;
     z-index: 9;
-    min-height: 50px;
 
     .container {
         padding: 0;
@@ -13,8 +12,12 @@
                 width: 100%;
 
                 ul {
-                    display: grid !important;
+                    gap: 1rem;
                 }
+            }
+
+            .dropdown-menu {
+                position: absolute;
             }
         }
     }
@@ -49,9 +52,10 @@
         display: flex;
         justify-content: flex-end;
         right: 0;
-        top: 0;
+        top: -5px;
         gap: 0.5rem;
         position: absolute;
+        align-items: center;
 
         .login {
             background: $btn-primary;
@@ -86,13 +90,6 @@
                     content: none;
                 }
             }
-        }
-    }
-
-
-    .show {
-        .dropdown-menu {
-            position: absolute;
         }
     }
 
