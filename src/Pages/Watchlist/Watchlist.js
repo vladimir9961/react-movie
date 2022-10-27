@@ -81,13 +81,13 @@ export default function Watchlist() {
                             className="card-results mt-3 watchlist-card">
                             <Card.Body>
                                 <Row>
-                                    <Col className='col-3'>
+                                    <Col className='col-md-3 col-12'>
                                         <Card.Img
                                             src={`https://www.themoviedb.org/t/p/w185${result.poster_path && result.poster_path || result.profile_path && result.profile_path}`}
                                             id="img-search"
                                         />
                                     </Col>
-                                    <Col className='col-9 right'>
+                                    <Col className='col-md-9 col-12 right'>
                                         <Row className='mb-3'>
                                             <Card.Title className='d-flex align-items-center'>
                                                 <Badge
