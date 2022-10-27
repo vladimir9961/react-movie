@@ -289,6 +289,14 @@
             height: fit-content !important;
             display: grid !important;
             padding-top: 70%;
+
+            .card {
+                filter: grayscale(0%) !important;
+            }
+
+            .credit-card {
+                filter: grayscale(0%) !important;
+            }
         }
     }
 }
