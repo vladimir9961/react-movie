@@ -1,12 +1,20 @@
 .full-width {
-    background-size: 100% 100%;
     position: absolute;
     top: 0;
+    height: fit-content;
+
+    .background-image {
+        background-size: 100% 100%;
+        position: absolute;
+        width: 100%;
+        height: 80%;
+        z-index: -1;
+    }
 
     .background-col {
         height: 100vh;
         width: 100vw;
-        background: linear-gradient(5deg, rgb(2, 0, 36) 25%, rgb(221 221 232 / 0%) 70%);
+        background: linear-gradient(5deg, rgb(2, 0, 36) 33%, rgb(221 221 232 / 0%) 70%);
 
         #lists-display {
 
@@ -20,6 +28,10 @@
             height: 100%;
             display: flex;
             align-items: flex-end;
+
+            .col {
+                z-index: 2;
+            }
 
             .title {
                 h3 {
@@ -259,6 +271,24 @@
                     }
                 }
             }
+        }
+    }
+}
+
+@media (max-width: 615px) {
+    .background-image {
+        height: 25% !important;
+        z-index: 1 !important;
+    }
+
+    .background-col {
+        height: 100% !important;
+        background: rgb(2, 0, 36) !important;
+
+        .holder-elements {
+            height: fit-content !important;
+            display: grid !important;
+            padding-top: 70%;
         }
     }
 }

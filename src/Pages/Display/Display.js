@@ -40,10 +40,9 @@ export default function Display() {
     return (
         <div
             className='full-width'
-            style={background && background}
         >
+            <div className='background-image' style={background && background}></div>
             <div className="background-col">
-
                 <Container
                     className='holder-elements'
                 >
