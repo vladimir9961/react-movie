@@ -12,7 +12,7 @@ const Movies = () => {
 
     return (
         <Container
-            className='movie-wrapper p-0 container'
+            className='movie-wrapper p-0'
         >
             <FilterContext.Provider value={{ filtered, setFiltered }}>
                 <Row

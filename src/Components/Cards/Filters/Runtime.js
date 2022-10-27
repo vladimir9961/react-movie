@@ -8,6 +8,7 @@ export default function Runtime(props) {
         <MenuItem >
             <span>Runtime</span>
             <RangeSlider
+                className="runtime-slider"
                 defaultValue={[0, 405]}
                 min={0}
                 max={405}

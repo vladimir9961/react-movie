@@ -22,12 +22,10 @@
         }
     }
 
-
     .user-logo {
         width: 75px;
         height: 24px;
     }
-
 
     .col {
         overflow-x: visible !important;
@@ -44,26 +42,29 @@
                 align-items: center;
                 margin: 0;
                 list-style: none;
+                gap: 1rem;
             }
         }
     }
 
     .user-profile {
         display: flex;
-        justify-content: flex-end;
         right: 0;
-        top: -7px;
         gap: 0.5rem;
         position: absolute;
-        align-items: center;
+        top: 0;
+        align-items: flex-start;
+        justify-content: flex-end;
 
         .login {
             background: $btn-primary;
             border: none;
+            padding: 5px 10px;
         }
 
         .navbar-toggler {
             border: none;
+            padding: 0;
 
             &:focus {
                 box-shadow: none;
@@ -98,6 +99,49 @@
         .navbar-nav {
             a {
                 color: $textDark;
+            }
+
+            .active-nav-link {
+                color: $btn-primary !important;
+
+                button {
+                    color: $btn-primary !important;
+
+                }
+            }
+
+            .nav-link {
+                color: $textDark;
+                background-image: linear-gradient($btn-primary, $btn-primary);
+                background-size: 0% 3px;
+                background-repeat: no-repeat;
+                transition: background-size 0.3s;
+                margin: 5px 0;
+                display: inline-block;
+                background-position: 50% calc(100% - 0px);
+                padding: 0;
+
+                &:first-child {
+                    padding-bottom: 3px;
+                }
+
+                &:hover {
+                    background-size: 100% 3px;
+                }
+
+                .dropdown {
+                    button {
+                        background: none;
+                        border: none;
+                        color: $textDark;
+                        padding: 0;
+                        font-weight: 600;
+
+                        &::after {
+                            content: none;
+                        }
+                    }
+                }
             }
 
             .dropdown-menu {

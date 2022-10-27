@@ -59,7 +59,7 @@ const CreateCards = (url) => {
                             />
                             <LazyLoadImage
                                 className="card-img"
-                                style={{ width: "220px", height: "330px" }}
+                                style={{ width: "200px", height: "300px" }}
                                 src={movie.poster_path ? "https://www.themoviedb.org/t/p/w220_and_h330_face" + movie.poster_path : require('../../assets/images/placeholder-img.jpg')}
                                 alt={movie.title || movie.name}
                                 loading="lazy"

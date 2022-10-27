@@ -76,7 +76,7 @@ iframe {
     align-items: center;
     height: 100%;
     width: fit-content;
-    padding: 10px;
+    padding: 1rem 0;
 
     .placeholder-div {
         border: none;
@@ -355,11 +355,11 @@ iframe {
 
                 .card-title {
                     font-weight: 600;
-                    font-size: 16px;
+                    font-size: 14px;
                 }
 
                 .card-text {
-                    font-size: 12px;
+                    font-size: 10px;
                     font-weight: 600;
                 }
             }

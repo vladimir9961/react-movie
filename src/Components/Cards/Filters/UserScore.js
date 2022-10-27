@@ -10,6 +10,7 @@ export default function UserScore(props) {
         <MenuItem >
             <span>User Score</span>
             <RangeSlider
+                className="user-score"
                 defaultValue={[0, 10]}
                 min={0}
                 max={10}

@@ -10,7 +10,7 @@ import UserScore from '../../Components/Cards/Filters/UserScore'
 
 export default function Filters() {
     const [filters, setfilters] = useState({
-        sort: 'popularity.asc',
+        sort: '',
         userscore: ['0', '10'],
         uservote: ['0'],
         runtime: ['0', '405'],
@@ -35,7 +35,7 @@ export default function Filters() {
         setdisplayBtnFilter(true)
         setfilters({
             ...filters,
-            sort: data
+            sort: `sort_by=${data}`
         })
     }
     const pull_dates = (fromDate, toDate) => {

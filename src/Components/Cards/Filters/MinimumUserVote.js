@@ -5,7 +5,9 @@ export default function MinimumUserVote(props) {
         props.func(e[1]);
     }
     return (
-        <MenuItem >
+        <MenuItem
+
+        >
             <span>Minimum User Votes</span>
             <RangeSlider
                 id="range-slider"
@@ -18,7 +20,6 @@ export default function MinimumUserVote(props) {
                 thumbsDisabled={[true, false]}
                 rangeSlideDisabled={true}
                 onInput={(e) => getValue(e)}
-
             />
         </MenuItem>
     )

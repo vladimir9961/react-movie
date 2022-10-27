@@ -8,7 +8,7 @@ export default function FilterBtn(props) {
         const { genre } = props
         props.func(false);
         setFiltered(
-            `https://api.themoviedb.org/3/discover/${type}?api_key=3b5caee89d6f1ccfb03cb837adb8e9e1&language=en-US&sort_by=${sort}&page=1&primary_release_date.gte=${from}&primary_release_date.lte=${to}&vote_count.gte=${uservote}&vote_average.gte=${userscore[0]}&vote_average.lte=${userscore[1]}&with_genres=${genre}&with_runtime.gte=${runtime[0]}&with_runtime.lte=${runtime[1]}&with_watch_monetization_types=flatrate`
+            `https://api.themoviedb.org/3/discover/${type}?api_key=3b5caee89d6f1ccfb03cb837adb8e9e1&language=en-US&${sort}&page=1&primary_release_date.gte=${from}&primary_release_date.lte=${to}&vote_count.gte=${uservote}&vote_average.gte=${userscore[0]}&vote_average.lte=${userscore[1]}&with_genres=${genre}&with_runtime.gte=${runtime[0]}&with_runtime.lte=${runtime[1]}&with_watch_monetization_types=flatrate`
         )
     }
 

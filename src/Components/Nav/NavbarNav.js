@@ -1,9 +1,15 @@
 import { Link } from 'react-router-dom';
 import { Container, Nav, Navbar, NavDropdown, Dropdown, DropdownButton, Col } from 'react-bootstrap';
-import { useContext } from "react";
+import { useContext, useState, useEffect } from "react";
 import { UserContext } from "../../Context/UserContext";
 import { LoginButton, LoginModal } from '../../login/LoginModal'
+import { useLocation } from 'react-router-dom';
 function NavbarNav() {
+  const location = useLocation();
+  const [url, setUrl] = useState(null);
+  useEffect(() => {
+    setUrl(location.pathname);
+  }, [location]);
   const { userInfo } = useContext(UserContext)
   const logoutUser = () => {
     window.location.reload(true);
@@ -16,7 +22,9 @@ function NavbarNav() {
         <Col
           className='col-md-2'
         >
-          <img className='user-logo' src={require("../../assets/images/logo-dark.png")} alt="logo" />
+          <Link to="/">
+            <img className='user-logo' src={require("../../assets/images/logo-dark.png")} alt="logo" />
+          </Link>
         </Col>
 
         <Navbar.Collapse id="basic-navbar-nav">
@@ -25,40 +33,65 @@ function NavbarNav() {
           >
             <Nav className="me-auto">
               <ul>
-
-                <li className='nav-item'>
-                  <Link to="/">Home</Link>
-                </li>
-                <NavDropdown as="li" title="Movies" id="dropdown-movies" aria-labelledby="dropdown-movies"
-                >
-                  <NavDropdown.Item >
-                    <Link to="movie/popular">Popular</Link>
-                  </NavDropdown.Item>
-                  <NavDropdown.Item >
-                    <Link to="movie/now_playing">Now Playing</Link>
-                  </NavDropdown.Item>
-                  <NavDropdown.Item >
-                    <Link to="movie/upcoming">Upcoming</Link>
-                  </NavDropdown.Item>
-                  <NavDropdown.Item >
-                    <Link to="movie/top_rated">Top Rated</Link>
-                  </NavDropdown.Item>
-                </NavDropdown>
-                <NavDropdown as="li" title="TV Shows" id="dropdown-tv">
-                  <NavDropdown.Item >
-                    <Link to="tv/popular">Popular</Link>
-                  </NavDropdown.Item>
-                  <NavDropdown.Item >
-                    <Link to="tv/airing_today">Airing Today</Link>
-                  </NavDropdown.Item>
-                  <NavDropdown.Item >
-                    <Link to="tv/on_tv">On Tv</Link>
-                  </NavDropdown.Item>
-                  <NavDropdown.Item >
-                    <Link to="tv/top_rated">Top Rated</Link>
-                  </NavDropdown.Item>
-
-                </NavDropdown>
+                <Link className={"navbar-item-link nav-link" + (url === "/" ? " active-nav-link" : "")} to="/">Home</Link>
+                <Link className={"navbar-item-link nav-link" + (
+                  url === `/movie/popular`
+                    ? " active-nav-link"
+                    : "" ||
+                      url === `/movie/now_playing`
+                      ? " active-nav-link"
+                      : "" ||
+                        url === `/movie/upcoming`
+                        ? " active-nav-link"
+                        : "" ||
+                          url === `/movie/top_rated`
+                          ? " active-nav-link"
+                          : ""
+                )} >
+                  <DropdownButton id="dropdown-basic-button" title="Movies">
+                    <Dropdown.Item>
+                      <Link to="movie/popular">Popular</Link>
+                    </Dropdown.Item>
+                    <Dropdown.Item>
+                      <Link to="movie/now_playing">Now Playing</Link>
+                    </Dropdown.Item>
+                    <Dropdown.Item>
+                      <Link to="movie/upcoming">Upcoming</Link>
+                    </Dropdown.Item>
+                    <Dropdown.Item>
+                      <Link to="movie/top_rated">Top Rated</Link>
+                    </Dropdown.Item>
+                  </DropdownButton>
+                </Link>
+                <Link className={"navbar-item-link nav-link" + (
+                  url === `/tv/popular`
+                    ? " active-nav-link"
+                    : "" ||
+                      url === `/tv/airing_today`
+                      ? " active-nav-link"
+                      : "" ||
+                        url === `/tv/on_tv`
+                        ? " active-nav-link"
+                        : "" ||
+                          url === `/tv/top_rated`
+                          ? " active-nav-link"
+                          : ""
+                )} >
+                  <DropdownButton id="dropdown-basic-button" title="Tv Shows">
+                    <Dropdown.Item>
+                      <Link to="tv/popular">Popular</Link>
+                    </Dropdown.Item>
+                    <Dropdown.Item>
+                      <Link to="tv/airing_today">Airing Today</Link>
+                    </Dropdown.Item>
+                    <Dropdown.Item>
+                      <Link to="tv/on_tv">On Tv</Link>
+                    </Dropdown.Item>
+                    <Dropdown.Item>
+                      <Link to="tv/top_rated">Top Rated</Link>
+                    </Dropdown.Item>
+                  </DropdownButton>
+                </Link>
               </ul>
               {!userInfo && <LoginModal />}
             </Nav>
