@@ -1,0 +1,87 @@
+@media (max-width: 615px) {
+    .navbar {
+        .container {
+            padding: 0 2rem;
+
+            .user-profile {
+                right: 1rem;
+
+                .login {
+                    position: relative;
+                    bottom: 4px;
+                }
+
+                .navbar-toggler {
+                    position: relative;
+                    bottom: 2px;
+                }
+            }
+        }
+    }
+
+    .background-image {
+        height: 25% !important;
+        z-index: 1 !important;
+    }
+
+    .background-col {
+        height: 100% !important;
+        background: rgb(2, 0, 36) !important;
+
+        .holder-elements {
+            height: fit-content !important;
+            display: grid !important;
+            padding-top: 70%;
+
+            .card {
+                filter: grayscale(0%) !important;
+            }
+
+            .credit-card {
+                filter: grayscale(0%) !important;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        max-width: 880px;
+    }
+
+    .sidebar-container {
+        height: 0 !important;
+        margin: 0;
+
+        .sidebar {
+            position: absolute !important;
+            z-index: 9;
+            left: 0;
+            width: 100%;
+            height: calc(100% - 1rem - 40px);
+        }
+
+        .main {
+            z-index: 10;
+            display: block;
+
+            #btn-collapse {
+                position: absolute;
+                right: 0;
+                bottom: 2rem;
+
+                &::before {
+                    font-family: FontAwesome;
+                    content: "\f0b0";
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 1400px) {
+
+    .container {
+        max-width: 1600px;
+    }
+}

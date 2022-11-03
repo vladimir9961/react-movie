@@ -274,29 +274,3 @@
         }
     }
 }
-
-@media (max-width: 615px) {
-    .background-image {
-        height: 25% !important;
-        z-index: 1 !important;
-    }
-
-    .background-col {
-        height: 100% !important;
-        background: rgb(2, 0, 36) !important;
-
-        .holder-elements {
-            height: fit-content !important;
-            display: grid !important;
-            padding-top: 70%;
-
-            .card {
-                filter: grayscale(0%) !important;
-            }
-
-            .credit-card {
-                filter: grayscale(0%) !important;
-            }
-        }
-    }
-}

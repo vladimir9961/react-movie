@@ -293,34 +293,3 @@
         }
     }
 }
-
-@media (max-width: 768px) {
-    .sidebar-container {
-        height: 0 !important;
-        margin: 0;
-
-        .sidebar {
-            position: absolute !important;
-            z-index: 9;
-            left: 0;
-            width: 100%;
-            height: calc(100% - 1rem - 40px);
-        }
-
-        .main {
-            z-index: 10;
-            display: block;
-
-            #btn-collapse {
-                position: absolute;
-                right: 0;
-                bottom: 2rem;
-
-                &::before {
-                    font-family: FontAwesome;
-                    content: "\f0b0";
-                }
-            }
-        }
-    }
-}
