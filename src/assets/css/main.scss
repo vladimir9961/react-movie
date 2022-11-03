@@ -22,7 +22,7 @@
     box-sizing: border-box;
     font: 100% $font-stack;
     font-weight: 600;
-    // font-family: "Roboto", sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 body {
@@ -160,6 +160,37 @@ a {
 
 .scroll {
     align-items: center;
+
+    h2 {
+        margin: 0;
+    }
+
+    .selector {
+        margin-left: 1rem;
+        display: flex;
+
+        .form-switch {
+            display: flex;
+            gap: 0.5rem;
+
+            .form-check-input {
+                height: 20px;
+                width: 40px;
+
+                &:focus {
+                    outline: none;
+                    box-shadow: none;
+                    border: none;
+                    color: red;
+                }
+            }
+        }
+    }
+
+    input[type=checkbox]:checked {
+        background-color: $btn-primary;
+        border: none;
+    }
 }
 
 .holder {

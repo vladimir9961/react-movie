@@ -18,6 +18,10 @@
 
             .dropdown-menu {
                 position: absolute;
+
+                a {
+                    color: $textDark;
+                }
             }
         }
     }
