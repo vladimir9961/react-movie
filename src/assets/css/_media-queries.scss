@@ -1,3 +1,9 @@
+@media (max-width: 370px) {
+    .overview {
+        width: 86%;
+    }
+}
+
 @media (max-width: 615px) {
     .navbar {
         .container {
@@ -54,6 +60,59 @@
         max-width: 880px;
     }
 
+    #navbar-items {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background: rgb(224, 224, 224) !important;
+
+        ul {
+            width: 100%;
+            justify-content: space-around;
+
+            .home {
+
+                width: fit-content;
+            }
+
+            .nav-link {
+                display: flex !important;
+                align-items: center;
+                position: relative;
+                font-size: 0;
+                padding: 10px 15px !important;
+
+                svg {
+                    font-size: 18px !important;
+                }
+
+                .dropdown {
+                    position: absolute;
+
+                    button {
+                        padding: 10px 15px !important;
+                        width: 100%;
+                        font-size: 0;
+                    }
+
+                    .dropdown-menu {
+                        top: auto;
+                        right: 0;
+                        left: auto;
+                        bottom: 30px;
+                    }
+                }
+            }
+        }
+    }
+
+    .backgroundImage {
+        top: 43px;
+        position: relative;
+        height: auto !important;
+    }
+
     .sidebar-container {
         height: 0 !important;
         margin: 0;
@@ -73,7 +132,7 @@
             #btn-collapse {
                 position: absolute;
                 right: 0;
-                bottom: 2rem;
+                bottom: 4rem;
 
                 &::before {
                     font-family: FontAwesome;

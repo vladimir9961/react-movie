@@ -98,7 +98,8 @@
         }
     }
 
-    .navbar-collapse {
+    #navbar-items {
+        width: 100%;
 
         .navbar-nav {
             a {
@@ -124,9 +125,10 @@
                 display: inline-block;
                 background-position: 50% calc(100% - 0px);
                 padding: 0;
+                line-height: 0;
 
-                &:first-child {
-                    padding-bottom: 3px;
+                svg {
+                    font-size: 0;
                 }
 
                 &:hover {

@@ -2,6 +2,7 @@
     position: absolute;
     top: 0;
     height: fit-content;
+    overflow-x: hidden;
 
     .background-image {
         background-size: 100% 100%;
@@ -9,6 +10,10 @@
         width: 100%;
         height: 80%;
         z-index: -1;
+
+        .backroundImage {
+            height: 100%;
+        }
     }
 
     .background-col {
@@ -130,7 +135,7 @@
                 overflow-x: auto;
                 width: 100%;
                 padding-bottom: 10px;
-
+                overflow-y: hidden;
 
                 &::-webkit-scrollbar-track {
                     border-radius: 10px;

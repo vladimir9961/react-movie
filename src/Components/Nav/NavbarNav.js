@@ -4,6 +4,9 @@ import { useContext, useState, useEffect } from "react";
 import { UserContext } from "../../Context/UserContext";
 import { LoginButton, LoginModal } from '../../login/LoginModal'
 import { useLocation } from 'react-router-dom';
+import { AiFillHome } from 'react-icons/ai';
+import { MdLocalMovies } from 'react-icons/md';
+import { GrMonitor } from 'react-icons/gr';
 function NavbarNav() {
   const location = useLocation();
   const [url, setUrl] = useState(null);
@@ -27,13 +30,13 @@ function NavbarNav() {
           </Link>
         </Col>
 
-        <Navbar.Collapse id="basic-navbar-nav">
+        <Nav id="navbar-items">
           <Col
-            className='col-md-9 link-wrapper'
+            className='col-md-12 link-wrapper'
           >
             <Nav className="me-auto">
               <ul>
-                <Link className={"navbar-item-link nav-link" + (url === "/" ? " active-nav-link" : "")} to="/">Home</Link>
+                <Link className={"navbar-item-link nav-link home" + (url === "/" ? " active-nav-link" : "")} to="/"><AiFillHome />Home</Link>
                 <Link className={"navbar-item-link nav-link" + (
                   url === `/movie/popular`
                     ? " active-nav-link"
@@ -47,7 +50,7 @@ function NavbarNav() {
                           url === `/movie/top_rated`
                           ? " active-nav-link"
                           : ""
-                )} >
+                )} ><MdLocalMovies />
                   <DropdownButton id="dropdown-basic-button" title="Movies">
                     <Dropdown.Item>
                       <Link to="movie/popular">Popular</Link>
@@ -76,7 +79,7 @@ function NavbarNav() {
                           url === `/tv/top_rated`
                           ? " active-nav-link"
                           : ""
-                )} >
+                )} ><GrMonitor />
                   <DropdownButton id="dropdown-basic-button" title="Tv Shows">
                     <Dropdown.Item>
                       <Link to="tv/popular">Popular</Link>
@@ -96,7 +99,7 @@ function NavbarNav() {
               {!userInfo && <LoginModal />}
             </Nav>
           </Col>
-        </Navbar.Collapse>
+        </Nav>
 
         <Col
           className='col-md-1 user-profile'
@@ -122,9 +125,6 @@ function NavbarNav() {
             >Logout
             </Dropdown.Item>
           </DropdownButton>}
-          <Navbar.Toggle
-            aria-controls="basic-navbar-nav"
-          />
         </Col>
       </Container>
     </Navbar >

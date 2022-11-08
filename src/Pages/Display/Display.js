@@ -20,7 +20,7 @@ export default function Display() {
         const response = await fetch(`https://api.themoviedb.org/3/${movieOrtv}/${id}?api_key=3b5caee89d6f1ccfb03cb837adb8e9e1&language=en-US&append_to_response=recommendations,videos,credits`)
             .then(res => res.json())
             .then((data) => {
-                setbackground({ backgroundImage: `url(https://www.themoviedb.org/t/p/w1280${data.backdrop_path}` })
+                setbackground(data.backdrop_path)
                 setinfo(data)
                 sethours(data.runtime);
             })
@@ -41,7 +41,21 @@ export default function Display() {
         <div
             className='full-width'
         >
-            <div className='background-image' style={background && background}></div>
+            <div className='background-image'
+            >
+                <picture>
+
+                    <source media="(max-width:400px)" srcSet={'https://www.themoviedb.org/t/p/w780' + background} />
+                    <source media="(max-width:800px)" srcSet={'https://www.themoviedb.org/t/p/w780' + background} />
+                    <source media="(min-width:800px)" srcSet={'https://www.themoviedb.org/t/p/w1280' + background} />
+                    <img
+                        srcSet={'https://www.themoviedb.org/t/p/1280' + background}
+                        alt="Flowers"
+                        className='backgroundImage'
+                        style={{ width: '100%' }}
+                    ></img>
+                </picture>
+            </div>
             <div className="background-col">
                 <Container
                     className='holder-elements'
